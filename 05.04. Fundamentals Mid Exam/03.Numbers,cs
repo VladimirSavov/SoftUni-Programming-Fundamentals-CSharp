@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace SoftUni
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<int> input = Console.ReadLine().Split().Select(int.Parse).ToList();
+            List<int> output = new List<int>();
+            double averageNumber = 0;
+            int counter = 0;
+            if (input.Count == 1)
+            {
+                Console.WriteLine("No");
+            }
+            for (int i = 0; i < input.Count; i++)
+            {
+                averageNumber += input[i];
+            }
+            averageNumber /= input.Count;
+            input.Reverse();
+            for (int i = 0; i < input.Count; i++)
+            {
+                if (input[i] > averageNumber)
+                {
+                    counter++;
+                    if (counter <= 5)
+                    {
+                        output.Add(input[i]);
+                    }
+                }
+            }
+            output.Sort();
+            output.Reverse();
+            Console.WriteLine(String.Join(" ", output));
+        }
+    }
+}
+
