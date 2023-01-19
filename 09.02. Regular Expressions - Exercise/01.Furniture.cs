@@ -42,7 +42,7 @@ namespace SoftUni
             {
                 Console.WriteLine(item);
             }
-            Console.WriteLine($"Total mooney spend: {totalPrice}");
+            Console.WriteLine($"Total mooney spend: {totalPrice:F2}");
         }
     }
 }
