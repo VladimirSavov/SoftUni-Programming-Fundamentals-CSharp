@@ -13,7 +13,7 @@ namespace SoftUni
             int stringLength = 0;
             string input = Console.ReadLine();
             List<string> output = new List<string>();
-            Regex reg = new Regex(@"(=|\/)(?<destination>[A-Z][a-z]{2,})\1");
+            Regex reg = new Regex(@"(=|\/)(?<destination>[A-Z][A-Za-z]{2,})\1");
             MatchCollection matches = reg.Matches(input);
             foreach (Match city in matches)
             {
